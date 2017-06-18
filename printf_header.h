@@ -17,6 +17,7 @@ typedef struct match_s{
 	char *find;
 	int (*function)();
 } match_t;
+int match_specifier(char *c);
 
 /* MAIN FUNCTIONS */
 
