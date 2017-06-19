@@ -1,6 +1,8 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 #include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /* HELPER FUNCTIONS */
 int _putchar(char c);
