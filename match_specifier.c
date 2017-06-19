@@ -8,10 +8,10 @@
 int match_specifier(char *c)
 {
 	match_t matches[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'d', print_digit},
-		{'i', print_int},
+		{'c', _print_char},
+		{'s', _print_string},
+		{'d', _print_digit},
+		{'i', _print_int},
 		{NULL, NULL}
 	}
 
