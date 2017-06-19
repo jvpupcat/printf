@@ -20,5 +20,7 @@ typedef struct match_s{
 int match_specifier(char *c);
 
 /* MAIN FUNCTIONS */
+int _print_string(char *str);
+int _print_char(char *str);
 
 #endif
