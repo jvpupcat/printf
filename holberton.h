@@ -9,6 +9,7 @@
 int _putchar(char c);
 int _strlen(char *str);
 int _strcmp(char *s1, char *s2);
+int _itoa(int n, char s[]);
 
 /* STRUCT */
 /**
@@ -23,9 +24,9 @@ typedef struct match_s{
 } match_t;
 
 /* MAIN FUNCTIONS */
-int _print_string(char *str);
-int _print_char(char *str);
+int _print_string(va_list list);
+int _print_char(va_list list);
 int _printf(const char *format, ...);
-int _print_mod(char *str);
+int _print_mod(va_list list);
 
 #endif
