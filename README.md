@@ -50,8 +50,8 @@ This project uses the C programming language to recreate some of the printf func
 
 ## Project Breakdown
 
-| Task # | Type | Short description | File name and link |
-| ---: | --- | --- | --- |
-|0| **Mandatory**  |{::nomarkdown} <p>Write a script that runs a C file through the preprocessor and save the result into another file.</p> <ul><li>The C file name will be saved in the variable `$CFILE`</li><li>The output should be saved in the file `c`</li></ul> {:/}| File: [0-preprocessor](./0-preprocessor)
-|1| **Mandatory**  |<p>Write a script that generates the assembly code of a C code and save it in an output file.</p> <ul><li>The C file name will be saved in the variable `$CFILE`</li><li>The output file should be named the same as the C file, but with the extension `.s` instead of `.c`.</li></ul>| File: [1-compiler](./1-compiler)
-|2| **Mandatory**  |<p>Write a script that compiles a C file but does not link.</p> <ul><li>The C file name will be saved in the variable `$CFILE`</li><li>The output file should be named the same as the C file, but with the extension `.o` instead of `.c`.</li></ul>| File: [2-assembler](./2-assembler)
+| Task # | Type | Short description
+| ---: | --- | --- |
+|0| **Mandatory**  |{::nomarkdown} <p>Write a function that produces output according to a format.</p> <ul><li>Returns: the number of characters printed (excluding the null byte used to end output to strings)</li><li>format is a character string. The format string is composed of zero or more directives</li><li>Handle conversion specifiers: c, s, %</li><li>You don't have to reproduce buffer, handle flags, field width, precision, or length modifiers</li></ul> {:/}|
+|1| **Mandatory**  |<p>Handle the following conversion specifiers:</p> <ul><li>d</li><li>i</li></ul>|
+|2| **Mandatory**  |<p>Write a man page for your function.</p> <ul><li>|
