@@ -27,6 +27,7 @@ int _printf(const char *format, ...)
 			{
 				if (*(matches[x].identifier) == format[y + 1])
 				{
+					y = y + 2;
 					(matches[x].function(list));
 				}
 				x++;
