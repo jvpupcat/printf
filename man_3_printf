@@ -1,0 +1,18 @@
+.TH man page "19 June 2017" "Steven and Joann's _printf function"
+.SH NAME
+.B _printf - formats and prints data from user input
+.SH SYNOPSIS
+.B #include "holberton.h"
+.SH DESCRIPTION
+Function produces standard output based on the following formats
+.B printf("%", variable)
+.SH OPTIONS
+%c - prints a char to standard output
+%s - prints a string to standard output
+%i - prints a signed int to standard output
+%d - prints a signed decimal to standard output
+%f - prints a floating point integer to standard output
+.SH BUGS
+No known bugs.
+.SH AUTHORS
+Steven Coyne and Joann Vuong
