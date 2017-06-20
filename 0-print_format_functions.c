@@ -7,6 +7,7 @@
 int _print_string(va_list list)
 {
 	char *str = va_arg(list, char *);
+	int x = 0;
 
 	while (str[x])
 	{
@@ -22,7 +23,7 @@ int _print_string(va_list list)
  */
 int _print_char(va_list list)
 {
-	char str = va_arg(list, int);
+	char str =(char)va_arg(list, int);
 
 	_putchar(str);
 	return (0);
@@ -32,16 +33,18 @@ int _print_char(va_list list)
  * @str: string being passed through function
  * Return: always 0.
  */
-int _print_mod(char *str)
+int _print_mod(va_list list)
 {
-	int i;
-	
-	for (i = 0; str[i] != '\0'; i++)
-	{ 
-		if (str[i] == '%' && str[i + 1] == '%')
+	char *mod = va_arg(list, int);
+	int x = 0;
+
+	while (mod[x])
+	{
+		if (mod[x] == '%' && mod[x + 1] == '%')
 		{
 			_putchar('%');
 		}
+		x++;
 	}
 	return (0);
 }
