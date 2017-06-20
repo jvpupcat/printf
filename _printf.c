@@ -1,20 +1,25 @@
 #include "holberton.h"
+
 /**
  * _printf - prints all user inputs 
  * @format: character string
- * Return: always 0.
+ * Return: 0 upon success
  */
 int _printf(const char *format, ...)
 {
 	va_list list;
+<<<<<<< HEAD
 	unsigned int x = 0;
 	unsigned int y = 0;
+=======
+	unsigned int x = 0, y = 0, counter = 0;
+>>>>>>> 25db83605ff8a901e84953636701b94bd320a9e0
 	match_t matches[] = {
+		{"%", _print_mod},
 		{"c", _print_char},
 		{"s", _print_string},
-		{"%", _print_mod},
-		/** {"d", _print_digit},
-		    {"i", _print_int}, */
+		/**{"d", _print_d_i},
+		{"i", _print_d_i},**/
 		{NULL, NULL}
 	};
 	va_start(list, format);
@@ -26,14 +31,19 @@ int _printf(const char *format, ...)
 			{
 				if (*(matches[x].identifier) == format[y + 1])
 				{
-					(matches[x].function(list));
+					y = y + 2;
+					counter += (matches[x].function(list));
 				}
 				x++;
 			}
 		}
-		_putchar(format[y]);
-		y++;
+		else
+		{
+			_putchar(format[y]);
+			counter = counter + 1;
+			y++;
+		}
 	}
 	va_end(list);
-	return (0);
+	return (counter);
 }

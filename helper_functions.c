@@ -9,6 +9,7 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+<<<<<<< HEAD
 
 /**
  * _strlen - function that calculates the length of string
@@ -74,3 +75,5 @@ int _itoa(int n, char s[])
         s[x] = '\0';
         return (0);
 }
+=======
+>>>>>>> 25db83605ff8a901e84953636701b94bd320a9e0
