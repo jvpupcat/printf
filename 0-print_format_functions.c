@@ -35,16 +35,8 @@ int _print_char(va_list list)
  */
 int _print_mod(va_list list)
 {
-	char *mod = va_arg(list, int);
-	int x = 0;
+	va_arg(list, int);
 
-	while (mod[x])
-	{
-		if (mod[x] == '%' && mod[x + 1] == '%')
-		{
-			_putchar('%');
-		}
-		x++;
-	}
+	_putchar('%');
 	return (0);
 }
