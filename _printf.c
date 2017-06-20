@@ -13,8 +13,8 @@ int _printf(const char *format, ...)
 		{"%", _print_mod},
 		{"c", _print_char},
 		{"s", _print_string},
-		/**{"d", _print_d_i},
-		{"i", _print_d_i},**/
+		{"d", _print_d_i},
+		{"i", _print_d_i},
 		{NULL, NULL}
 	};
 	va_start(list, format);
@@ -22,15 +22,16 @@ int _printf(const char *format, ...)
 	{
 		if (format[y] == '%')
 		{
+			x = 0;
 			while (matches[x].identifier != NULL)
 			{
 				if (*(matches[x].identifier) == format[y + 1])
 				{
-					y = y + 2;
 					counter += (matches[x].function(list));
 				}
 				x++;
 			}
+			y = y + 2;
 		}
 		else
 		{
