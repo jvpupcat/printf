@@ -8,7 +8,7 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	unsigned int x = 0;
-	unsigned int y;
+	unsigned int y = 0;
 	match_t matches[] = {
 		{"c", _print_char},
 		{"s", _print_string},
@@ -18,11 +18,10 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 	va_start(list, format);
-	y = 0;
 	while (format[y] != '\0')
 	{
 		if (format[y] == '%')
-		{
+		{	
 			while (matches[x].identifier != NULL)
 			{
 				if (*(matches[x].identifier) == format[y + 1])

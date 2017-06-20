@@ -48,3 +48,29 @@ int _strcmp(char *s1, char *s2)
 	}
 	return (0);
 }
+
+/**
+ * _itoa - function that converts integer to char
+ * @n: first int variable
+ * @s: char string
+ * Return: integer upon success
+ **/
+int _itoa(int n, char s[])
+{
+        int x = 0;
+        int sign;
+
+        sign = n;
+        if (sign < 0)
+                n = -n;
+        do {
+                s[x++] = n % 10 + '0';
+        }
+        while ((n = n / 10) > 0);
+        if (sign < 0)
+        {
+                s[x++] = '-';
+        }
+        s[x] = '\0';
+        return (0);
+}
