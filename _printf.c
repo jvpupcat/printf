@@ -2,23 +2,22 @@
 /**
  * _printf - prints all user inputs 
  * @format: character string
- * Return: always 0.
+ * Return: 0 upon success
  */
 int _printf(const char *format, ...)
 {
 	va_list list;
 	unsigned int x = 0;
-	unsigned int y;
+	unsigned int y = 0;
 	match_t matches[] = {
+		{"%", _print_mod},
 		{"c", _print_char},
 		{"s", _print_string},
-		{"%", _print_mod},
-		/** {"d", _print_digit},
-		    {"i", _print_int}, */
+		{"d", _print_d_i},
+		{"i", _print_d_i},
 		{NULL, NULL}
 	};
 	va_start(list, format);
-	y = 0;
 	while (format[y] != '\0')
 	{
 		if (format[y] == '%')
@@ -33,8 +32,11 @@ int _printf(const char *format, ...)
 				x++;
 			}
 		}
-		_putchar(format[y]);
-		y++;
+		else
+		{
+			_putchar(format[y]);
+			y++;
+		}
 	}
 	va_end(list);
 	return (0);
