@@ -8,6 +8,7 @@
 int _print_mod(va_list list)
 {
 	int counter = 0;
+
 	va_arg(list, int);
 
 	_putchar('%');
@@ -43,7 +44,7 @@ int _print_string(va_list list)
 int _print_char(va_list list)
 {
 	int counter = 0;
-	char str =(char)va_arg(list, int);
+	char str = (char)va_arg(list, int);
 
 	_putchar(str);
 	counter += 1;
@@ -53,23 +54,33 @@ int _print_char(va_list list)
 /**
  * _print_d_i - function that converts string to integer
  * @list: va_list list
- * Return: 0 upon success
-
+ * Return: k
+ */
 int _print_d_i(va_list list)
 {
-	char str = va_arg(list, int);
-	int x;
+	int n;
+	int k = 0;
+	int i;
+	int max = 100000000;
 
-	if (str < 0)
+	n = va_arg(list, int);
+	if (n < 0)
 	{
-		str = -str;
+		_putchar('-');
+		n = -n;
+		k++;
 	}
-	do 
+	if (n == 0)
 	{
-		str[x++] = n % 10 + '0';
-	} while ((n /= 10) > 0);
-	if (str < 0)
-		str[x++] = '-';
-	str[x] = '\0';
-	return (x);
-}**/
+		k += _putchar('0');
+	}
+	for (i = 0; i < 9; i++)
+	{
+		if (n / max != 0)
+		{
+			k += _putchar(((n / max) % 10) + '0');
+		}
+		max /= 10;
+	}
+	return (k);
+}
