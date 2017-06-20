@@ -4,16 +4,15 @@
  * @str: string being passed to function for print
  * Return: void.
  */
-int _print_string(char *str)
+int _print_string(va_list list)
 {
-	int x = 0;
+	char *str = va_arg(list, char *);
 
 	while (str[x])
 	{
 		_putchar(str[x]);
 		x++;
 	}
-	_putchar('\n');
 	return (0);
 }
 /**
@@ -21,15 +20,11 @@ int _print_string(char *str)
  * @str: character being passed to function
  * Return: void.
  */
-int _print_char(char *str)
+int _print_char(va_list list)
 {
-	int n;
+	char str = va_arg(list, int);
 
-	for (n = 0; n != '\0'; n++)
-	{
-		_putchar(str[n]);
-	}
-	_putchar('\n');
+	_putchar(str);
 	return (0);
 }
 /**
@@ -48,6 +43,5 @@ int _print_mod(char *str)
 			_putchar('%');
 		}
 	}
-	_putchar('\n');
 	return (0);
 }
