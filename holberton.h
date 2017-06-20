@@ -18,13 +18,14 @@ int _strcmp(char *s1, char *s2);
  * Return: none
  **/
 typedef struct match_s{
-	char *find;
+	char *identifier;
 	int (*function)();
 } match_t;
-int match_specifier(char *c);
 
 /* MAIN FUNCTIONS */
 int _print_string(char *str);
 int _print_char(char *str);
+int _printf(const char *format, ...);
+int _print_mod(char *str);
 
 #endif
