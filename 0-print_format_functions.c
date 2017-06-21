@@ -61,24 +61,26 @@ int _print_d_i(va_list list)
 	int n;
 	int k = 0;
 	int i;
-	int max = 100000000;
+	int max = 1000000000;
 
 	n = va_arg(list, int);
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		n *= -1;
 		k++;
 	}
 	if (n == 0)
 	{
-		k += _putchar('0');
+		_putchar('0');
+		k++;
 	}
 	for (i = 0; i < 9; i++)
 	{
 		if (n / max != 0)
 		{
-			k += _putchar(((n / max) % 10) + '0');
+			_putchar(((n / max) % 10) + '0');
+			k++;		
 		}
 		max /= 10;
 	}
