@@ -58,7 +58,7 @@ int _print_char(va_list list)
  */
 int _print_d_i(va_list list)
 {
-	int n,  i, counter = 0
+	int n,  i, counter = 0;
 	int max = 100000000;
 
 	n = va_arg(list, int);
