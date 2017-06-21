@@ -11,15 +11,13 @@ int _printf(const char *format, ...)
 	unsigned int x = 0, y = 0, counter = 0;
 	unsigned int flag;
 	match_t matches[] = {
-		{"%", _print_mod},
-		{"c", _print_char},
-		{"s", _print_string},
-		{"d", _print_d_i},
-		{"i", _print_d_i},
-		{NULL, NULL}
+		{"%", _print_mod}, {"c", _print_char}, {"s", _print_string},
+		{"d", _print_d_i}, {"i", _print_d_i}, {NULL, NULL}
 	};
 
 	va_start(list, format);
+	if (format == NULL || format[x] == NULL)
+		return (NULL);
 	while (format[y] != '\0')
 	{ 
 		flag = 0;
