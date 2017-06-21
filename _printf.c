@@ -8,7 +8,6 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	char *n = NULL;
 	unsigned int x = 0, y = 0, counter = 0;
 	unsigned int flag;
 	match_t matches[] = {
