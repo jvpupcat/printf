@@ -27,10 +27,10 @@ int _print_rev(va_list list)
  * @x: pointer
  * Return: 0 upon success
  **/
-char *rot13(char *x)
+char *rot13(va_list list)
 {
-	int a;
-	int b;
+	char *x = va_arg(list, char *)
+	int a, b, counter;
 	char s[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char t[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
@@ -45,5 +45,7 @@ char *rot13(char *x)
 			}
 		}
 	}
-	return (x);
+	_putchar(x[a]);
+	counter += 1
+	return (counter);
 }
