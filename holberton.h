@@ -15,9 +15,10 @@ int _putchar(char c);
  * @function: function that matching variables call
  * Return: none
  **/
-typedef struct match_s{
+typedef struct match_s
+{
 	char *identifier;
-	int (*function)();
+	int (*function)(va_list);
 } match_t;
 
 /* MAIN FUNCTIONS */
@@ -26,5 +27,8 @@ int _print_string(va_list list);
 int _print_char(va_list list);
 int _print_d_i(va_list list);
 int _printf(const char *format, ...);
+
+/* PRINT OTHER FUNCTIONS */
+int _print_rev(va_list list);
 
 #endif
