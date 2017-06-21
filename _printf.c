@@ -35,13 +35,13 @@ int _printf(const char *format, ...)
 				else
 					x++;
 			}
-/**			if (matches[x].identifier == NULL)
+			if (matches[x].identifier == NULL)
 			{
 				_putchar(format[y]);
 				counter += 1;
 				_putchar(format[y + 1]);
 				counter += 1;
-			}**/
+			}
 			y = y + 2;
 		}
 		else
