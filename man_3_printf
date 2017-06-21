@@ -1,18 +1,68 @@
-.TH man page "19 June 2017" "Steven and Joann's _printf function"
+.\" Manpage for _printf().
+.\" Contact Steven or Joann for corrections.
+.TH man 8 "19 June 2017" "1.0" "_printf function"
 .SH NAME
-.B _printf - formats and prints data from user input
+_printf - formats and prints data from user input
+
 .SH SYNOPSIS
 .B #include "holberton.h"
+
+.B int _print_mod(va_list list);
+
+.B int _print_string(va_list list);
+
+.B int _print_char(va_list list);
+
+.B int _print_d_i(va_list list);
+
+.B int _printf(const char *format, ...);
+
+.B #include <stdarg.h>
+
+.B #include <unistd.h>
+
+.B #include <stdlib.h>
+
+.B #include <stdio.h>
+
 .SH DESCRIPTION
-Function produces standard output based on the following formats
-.B printf("%", variable)
-.SH OPTIONS
-%c - prints a char to standard output
-%s - prints a string to standard output
-%i - prints a signed int to standard output
-%d - prints a signed decimal to standard output
-%f - prints a floating point integer to standard output
+.B _printf("%", variable)
+.PP
+The function _printf will print output according to the format described below. Output is written to std out.
+.PP
+This function writes the output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the 
+variable-length argument facilities of stdarg(3)) are converted for output.
+
+.B Return Value
+.PP
+If the return is successful, _printf will return the number of characters printed (not including the null byte used to end output to strings).
+.PP
+_printf will return a negative value if an error is encountered.
+
+.B Format of the format string
+.PP
+Not all edge cases will be accommodated by the function.
+
+.B The conversion specifier
+.PP
+A conversion specifier is a character that specifies the type of conversion to be applied. The conversion specifiers are:
+.IP d,i
+The int argument is converted to signed decimal notation.
+       
+.IP c
+The int argument is converted to an unsigned char, and the resulting character is written.
+
+.IP s
+The const char * argument is expected to be a pointer to a string (an array of character type) Characters from the array are written up to a terminating null byte (but the '\0' is not incuded).
+
+.IP %
+% is written. Argument conversion does not occur. The conversion specification is '%%'
+
+.SH NOTES
+Not all edge cases will be accommodated by the _printf function.
+
 .SH BUGS
 No known bugs.
+
 .SH AUTHORS
 Steven Coyne and Joann Vuong
