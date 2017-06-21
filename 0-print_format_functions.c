@@ -2,7 +2,7 @@
 
 /**
  * _print_mod - prints % if found twice consecutively
- * @str: string being passed through function
+ * @list: variable that takes in any argument
  * Return: counter
  */
 int _print_mod(va_list list)
@@ -18,7 +18,7 @@ int _print_mod(va_list list)
 
 /**
  * _print_string - prints a string
- * @str: string being passed to function for print
+ * @list: variable that takes in any argument
  * Return: counter
  */
 int _print_string(va_list list)
@@ -38,7 +38,7 @@ int _print_string(va_list list)
 
 /**
  * _print_char - prints a character
- * @str: character being passed to function
+ * @list: variable that takes in any argument
  * Return: counter
  */
 int _print_char(va_list list)
@@ -53,14 +53,13 @@ int _print_char(va_list list)
 
 /**
  * _print_d_i - function that converts string to integer
- * @list: va_list list
+ * @list: variable that takes in any argument
  * Return: k
  */
 int _print_d_i(va_list list)
 {
-	int n,  i;
+	int n,  i, counter = 0
 	int max = 100000000;
-	int counter = 0;
 
 	n = va_arg(list, int);
 	if (n < 0)
