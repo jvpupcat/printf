@@ -12,7 +12,8 @@ int _printf(const char *format, ...)
 	unsigned int flag;
 	match_t matches[] = {
 		{"%", _print_mod}, {"c", _print_char}, {"s", _print_string},
-		{"d", _print_d_i}, {"i", _print_d_i}, {NULL, NULL}
+		{"d", _print_d_i}, {"i", _print_d_i}, {"r", _print_rev}, 
+		{NULL, NULL}
 	};
 
 	va_start(list, format);
