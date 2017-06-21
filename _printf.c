@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 	if (format == NULL || format[x] == NULL)
-		return (NULL);
+		return (0);
 	while (format[y] != '\0')
 	{ 
 		flag = 0;
