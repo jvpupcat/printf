@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	unsigned int x = 0, y = 0, counter = 0;
+	unsigned int flag;
 	match_t matches[] = {
 		{"%", _print_mod},
 		{"c", _print_char},
@@ -18,18 +19,30 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 	va_start(list, format);
+	if (format = NULL)
+	{
+		return (NULL);
+	}
 	while (format[y] != '\0')
 	{
+		flag = 0;
 		if (format[y] == '%')
 		{
 			x = 0;
-			while (matches[x].identifier != NULL)
+			while (matches[x].identifier != NULL && flag == 0)
 			{
 				if (*(matches[x].identifier) == format[y + 1])
 				{
 					counter += (matches[x].function(list));
+					flag = 1;
 				}
-				x++;
+				else
+					x++;
+			}
+			if (matches[x].identifier == NULL)
+			{
+				_putchar(format[y]);
+				_putchar(format[y + 1]);
 			}
 			y = y + 2;
 		}
