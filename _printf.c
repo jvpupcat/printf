@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	match_t matches[] = {
 		{"%", _print_mod}, {"c", _print_char}, {"s", _print_string},
 		{"d", _print_d_i}, {"i", _print_d_i}, {"r", _print_rev}, 
-		{NULL, NULL}
+		{"R", _print_rot13}, {NULL, NULL}
 	};
 
 	va_start(list, format);
