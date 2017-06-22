@@ -23,14 +23,15 @@ int _print_rev(va_list list)
 }
 
 /**
- * rot13 - function that encodes a string using rot13
- * @x: pointer
+ * _print_rot13 - function that encodes a string using rot13
+ * @list: va_list list
  * Return: 0 upon success
- **/
-char *rot13(va_list list)
+
+int _print_rot13(va_list list)
 {
-	char *x = va_arg(list, char *)
-	int a, b, counter;
+	char *x = va_arg(list, char *);
+	int a, b, counter = 0;
+	char temp;
 	char s[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char t[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
@@ -40,12 +41,12 @@ char *rot13(va_list list)
 		{
 			if (s[b] == x[a])
 			{
-				x[a] = t[b];
+				temp = t[b];
 				break;
 			}
 		}
+		_putchar(temp);
+		counter += 1;
 	}
-	_putchar(x[a]);
-	counter += 1
 	return (counter);
-}
+}**/
