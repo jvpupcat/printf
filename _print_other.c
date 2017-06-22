@@ -30,7 +30,7 @@ int _print_rev(va_list list)
 int _print_rot13(va_list list)
 {
 	char *x = va_arg(list, char *);
-	int a, b;
+	int a, b, counter = 0;
 	char forward[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char rotate[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
@@ -41,13 +41,15 @@ int _print_rot13(va_list list)
 			if (forward[b] == x[a])
 			{
 				_putchar(rotate[b]);
+				counter += 1;
 				break;
 			}
 		}
 		if (forward[b] == '\0')
 		{
 			_putchar(x[a]);
+			counter += 1;
 		}
 	}
-	return (a);
+	return (counter);
 }
