@@ -30,5 +30,6 @@ int _printf(const char *format, ...);
 
 /* PRINT OTHER FUNCTIONS */
 int _print_rev(va_list list);
+int _print_rot13(va_list list);
 
 #endif
