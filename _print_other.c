@@ -25,28 +25,29 @@ int _print_rev(va_list list)
 /**
  * _print_rot13 - function that encodes a string using rot13
  * @list: va_list list
- * Return: 0 upon success
-
+ * Return: a
+ **/
 int _print_rot13(va_list list)
 {
 	char *x = va_arg(list, char *);
-	int a, b, counter = 0;
-	char temp;
-	char s[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char t[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int a, b;
+	char forward[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char rotate[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (a = 0; x[a] != '\0'; a++)
 	{
-		for (b = 0; s[b] != '\0'; b++)
+		for (b = 0; forward[b] != '\0'; b++)
 		{
-			if (s[b] == x[a])
+			if (forward[b] == x[a])
 			{
-				temp = t[b];
+				_putchar(rotate[b]);
 				break;
 			}
 		}
-		_putchar(temp);
-		counter += 1;
+		if (forward[b] == '\0')
+		{
+			_putchar(x[a]);
+		}
 	}
-	return (counter);
-}**/
+	return (a);
+}
