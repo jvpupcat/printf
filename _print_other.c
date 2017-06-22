@@ -2,12 +2,12 @@
 
 /**
  * _print_rev - function that prints string in reverse
- * @s: pointer
+ * @list: va_list list
  * Return: none
  **/
 int _print_rev(va_list list)
 {
-	char *str = va_arg(list, char *);	
+	char *str = va_arg(list, char *);
 	int x, counter = 0;
 
 	if (str == NULL)
