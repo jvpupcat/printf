@@ -58,25 +58,31 @@ int _print_char(va_list list)
  */
 int _print_d_i(va_list list)
 {
-	int n,  i, counter = 0;
-	int max = 100000000;
+	int i, stored_num = 0, counter = 0;
+	int n = va_arg(list, int);
+	int max = 1000000000;
 
-	n = va_arg(list, int);
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
-		counter++;
+		counter += 1;
 	}
 	if (n == 0)
 	{
-		counter += _putchar('0');
+		_putchar('0');
+		counter += 1;
 	}
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 10; i++)
 	{
 		if (n / max != 0)
 		{
-			counter += _putchar(((n / max) % 10) + '0');
+			stored_num = (n / max) % 10;
+			if (stored_num < 0)
+			{
+				stored_num *= -1;
+			}
+			_putchar(stored_num + '0');
+			counter += 1;
 		}
 		max /= 10;
 	}
